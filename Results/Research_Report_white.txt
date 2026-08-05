@@ -1,0 +1,117 @@
+=== COMPLETE RESEARCH DATA REPORT (white) ===
+Image Size: 256x256x3
+Optimized Parameters (Cuckoo Search): a=33.1994, b=5.0000, c=31.1076, d=14.0205, r=1.0168
+Cuckoo Search optimization time: 19.4539 sec
+--------------------------------------------------
+1. PERFORMANCE ANALYSIS (Averaged 10 runs):
+   Encryption Time: 0.871967 sec
+   Decryption Time: 0.881453 sec
+--------------------------------------------------
+2. CHAOTIC DYNAMICS:
+   Lyapunov Exponents: [4.6953, 3.9068, -0.1453, -37.7986]
+   Sum of Exponents: -29.3418
+   Status: HYPERCHAOTIC
+   Divergence (trace J) = -a - 1 - b + r = -38.1826 => system is DISSIPATIVE
+   Sorted Lyapunov spectrum: [4.6953, 3.9068, -0.1453, -37.7986]
+   Kaplan-Yorke dimension (D_KY): 3.2237
+   Positive exponents: 2 (hyperchaos requires >= 2)
+--------------------------------------------------
+3. SECURITY KEY ANALYSIS:
+   Initial-state search space ONLY: 2^191.31 (NOTE: excludes control parameters a,b,c,d,r; the four states are deterministically derived from the plaintext hash and are not secret under the current design -- see Response to Reviewer #3, Major Comments 2-3).
+   Precision used: 1e-15 (IEEE 754 double)
+--------------------------------------------------
+4. ROBUSTNESS ANALYSIS:
+   NOISE (1%): PSNR=20.17dB, SSIM=0.3723
+   NOISE (5%): PSNR=13.33dB, SSIM=0.0320
+   NOISE (10%): PSNR=10.63dB, SSIM=0.0143
+   CROP (10%): PSNR=14.87dB, SSIM=0.0959
+   CROP (25%): PSNR=10.80dB, SSIM=0.0364
+   CROP (50%): PSNR=7.78dB, SSIM=0.0248
+--------------------------------------------------
+5. STATISTICAL ANALYSIS:
+   Global Entropy: 7.99726812 (Ideal: 8.0)
+   Local Entropy (32x32 blocks): mean=7.937657, std=0.005684
+   Correlation (per channel, per direction):
+      Blue-Horizontal: -0.00138895
+      Blue-Vertical: 0.01121359
+      Blue-Diagonal: -0.00463351
+      Green-Horizontal: -0.00281507
+      Green-Vertical: -0.00017951
+      Green-Diagonal: -0.00012945
+      Red-Horizontal: 0.00084141
+      Red-Vertical: -0.00049571
+      Red-Diagonal: 0.00533279
+   Inter-channel correlation:
+      R-G: -0.00069642
+      R-B: 0.00014826
+      G-B: 0.00249210
+   Polar (rose-diagram) histogram -- circular resultant length R (0 = isotropic/uniform, 1 = fully directional/non-uniform):
+      Original image:
+         Blue: R=1.000000
+         Green: R=1.000000
+         Red: R=1.000000
+      Encrypted image:
+         Blue: R=0.002720
+         Green: R=0.003747
+         Red: R=0.002618
+--------------------------------------------------
+6. DIFFERENTIAL ATTACK ANALYSIS:
+   NPCR: 99.6175% (Ideal > 99.6%)
+   UACI: 33.4658% (Ideal ~ 33.46%)
+--------------------------------------------------
+7. KEY-SENSITIVITY TEST (relabeled; NOT a KPA/CPA attack):
+   Deviation Applied: np.nextafter (+1 ULP) on 100% of permutation key stream
+   Deviation Applied: randomized diffusion key on 100% of diffusion key stream
+   PSNR (Correct vs Wrong Decrypt): 4.77 dB (Ideal: < 10 dB)
+   SSIM (Correct vs Wrong Decrypt): 0.0086 (Ideal: ~ 0.0)
+   NPCR: 99.5962% (Ideal > 99.6%) | Status: FAIL
+   UACI: 49.8933% (Ideal ~ 33.46%)
+--------------------------------------------------
+8. CHOSEN-PLAINTEXT DIFFUSION-LEAKAGE PROBE:
+   NOTE: under this content-dependent design, the permutation key ks_p is unknown to an attacker who only chooses the plaintext, so the all-zero ciphertext (= ks_d permuted by an unknown ks_p) cannot be trivially un-permuted.
+   All-zero ciphertext entropy: 7.999075 (ideal 8.0; a value well below 8.0 would indicate diffusion-stream leakage)
+   Impulse-response ciphertext written to 'CPA_Probe_Impulse.png' for visual/structural inspection.
+--------------------------------------------------
+9. NIST SP 800-22 FULL SUITE (15 tests, diffusion key stream):
+   01. Frequency (Monobit): 0.38565298663545144 -> PASS
+   02. Block Frequency: 0.32480793998438473 -> PASS
+   03. Runs: 0.9385068521559919 -> PASS
+   04. Longest Run of Ones in a Block: 0.23594954196614018 -> PASS
+   05. Binary Matrix Rank: 0.8770934248913302 -> PASS
+   06. Discrete Fourier Transform (Spectral): 0.508314967665557 -> PASS
+   07. Non-overlapping Template Matching: 0.3915800189425315 -> PASS
+   08. Overlapping Template Matching: 0.1932328594938923 -> PASS
+   09. Maurer's Universal Statistical: 0.06828020287074103 -> PASS
+   10. Linear Complexity: 0.7457264512298805 -> PASS
+   11a. Serial (delta psi^2): 0.2763609426012823 -> PASS
+   11b. Serial (delta^2 psi^2): 0.1136153191289225 -> PASS
+   12. Approximate Entropy: 0.27633146617787485 -> PASS
+   13a. Cumulative Sums (forward): 0.5721139624863625 -> PASS
+   13b. Cumulative Sums (backward): 0.4343364800068408 -> PASS
+   14. Random Excursions (state -4): 0.6638020725762965 -> PASS
+   14. Random Excursions (state -3): 0.4824934632708967 -> PASS
+   14. Random Excursions (state -2): 0.7333881427837313 -> PASS
+   14. Random Excursions (state -1): 0.8192522594985441 -> PASS
+   14. Random Excursions (state +1): 0.5351966597873099 -> PASS
+   14. Random Excursions (state +2): 0.11178138930225674 -> PASS
+   14. Random Excursions (state +3): 0.3168859604362172 -> PASS
+   14. Random Excursions (state +4): 0.5784952233759515 -> PASS
+   15. Random Excursions Variant (state -9): 0.08155373759690426 -> PASS
+   15. Random Excursions Variant (state -8): 0.09589233277102141 -> PASS
+   15. Random Excursions Variant (state -7): 0.07805088501044014 -> PASS
+   15. Random Excursions Variant (state -6): 0.07566959555505592 -> PASS
+   15. Random Excursions Variant (state -5): 0.09349392682778901 -> PASS
+   15. Random Excursions Variant (state -4): 0.18152007150764493 -> PASS
+   15. Random Excursions Variant (state -3): 0.3772280037022303 -> PASS
+   15. Random Excursions Variant (state -2): 0.7062294499308144 -> PASS
+   15. Random Excursions Variant (state -1): 0.9872956264155629 -> PASS
+   15. Random Excursions Variant (state +1): 0.6557050029765557 -> PASS
+   15. Random Excursions Variant (state +2): 0.81108579590179 -> PASS
+   15. Random Excursions Variant (state +3): 0.792180349723991 -> PASS
+   15. Random Excursions Variant (state +4): 0.4269442700350692 -> PASS
+   15. Random Excursions Variant (state +5): 0.28844020795339675 -> PASS
+   15. Random Excursions Variant (state +6): 0.48934588825438663 -> PASS
+   15. Random Excursions Variant (state +7): 0.6910222373589973 -> PASS
+   15. Random Excursions Variant (state +8): 0.6991499451018484 -> PASS
+   15. Random Excursions Variant (state +9): 0.9445795576811488 -> PASS
+==================================================

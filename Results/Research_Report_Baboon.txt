@@ -1,0 +1,93 @@
+=== COMPLETE RESEARCH DATA REPORT (Baboon) ===
+Image Size: 246x256x3
+Optimized Parameters (Cuckoo Search): a=32.9154, b=3.9918, c=32.7857, d=19.9814, r=1.1494
+Cuckoo Search optimization time: 8.9643 sec
+--------------------------------------------------
+1. PERFORMANCE ANALYSIS (Averaged 10 runs):
+   Encryption Time: 0.654409 sec
+   Decryption Time: 0.635690 sec
+--------------------------------------------------
+2. CHAOTIC DYNAMICS:
+   Lyapunov Exponents: [5.474, 4.4433, -0.206, -37.6575]
+   Sum of Exponents: -27.9462
+   Status: HYPERCHAOTIC
+   Divergence (trace J) = -a - 1 - b + r = -36.7578 => system is DISSIPATIVE
+   Sorted Lyapunov spectrum: [5.474, 4.4433, -0.206, -37.6575]
+   Kaplan-Yorke dimension (D_KY): 3.2579
+   Positive exponents: 2 (hyperchaos requires >= 2)
+--------------------------------------------------
+3. SECURITY KEY ANALYSIS:
+   Initial-state search space ONLY: 2^191.31 (NOTE: excludes control parameters a,b,c,d,r; the four states are deterministically derived from the plaintext hash and are not secret under the current design -- see Response to Reviewer #3, Major Comments 2-3).
+   Precision used: 1e-15 (IEEE 754 double)
+--------------------------------------------------
+4. ROBUSTNESS ANALYSIS:
+   NOISE (1%): PSNR=23.70dB, SSIM=0.7695
+   NOISE (5%): PSNR=16.96dB, SSIM=0.4041
+   NOISE (10%): PSNR=14.25dB, SSIM=0.2551
+   CROP (10%): PSNR=18.43dB, SSIM=0.5257
+   CROP (25%): PSNR=14.40dB, SSIM=0.2841
+   CROP (50%): PSNR=11.43dB, SSIM=0.1292
+--------------------------------------------------
+5. STATISTICAL ANALYSIS:
+   Global Entropy: 7.99709715 (Ideal: 8.0)
+   Local Entropy (32x32 blocks): mean=7.938968, std=0.005348
+   Correlation (per channel, per direction):
+      Blue-Horizontal: -0.00147775
+      Blue-Vertical: -0.00503403
+      Blue-Diagonal: -0.00081214
+      Green-Horizontal: -0.00133475
+      Green-Vertical: 0.00864780
+      Green-Diagonal: -0.00635220
+      Red-Horizontal: 0.00238409
+      Red-Vertical: -0.00070007
+      Red-Diagonal: -0.00043576
+   Inter-channel correlation:
+      R-G: 0.00086253
+      R-B: 0.00237131
+      G-B: -0.00371274
+   Polar (rose-diagram) histogram -- circular resultant length R (0 = isotropic/uniform, 1 = fully directional/non-uniform):
+      Original image:
+         Blue: R=0.425309
+         Green: R=0.496151
+         Red: R=0.367352
+      Encrypted image:
+         Blue: R=0.000618
+         Green: R=0.004835
+         Red: R=0.003283
+--------------------------------------------------
+6. DIFFERENTIAL ATTACK ANALYSIS:
+   NPCR: 99.5914% (Ideal > 99.6%)
+   UACI: 33.4710% (Ideal ~ 33.46%)
+--------------------------------------------------
+7. KEY-SENSITIVITY TEST (relabeled; NOT a KPA/CPA attack):
+   Deviation Applied: np.nextafter (+1 ULP) on 100% of permutation key stream
+   Deviation Applied: randomized diffusion key on 100% of diffusion key stream
+   PSNR (Correct vs Wrong Decrypt): 8.40 dB (Ideal: < 10 dB)
+   SSIM (Correct vs Wrong Decrypt): 0.0089 (Ideal: ~ 0.0)
+   NPCR: 99.6210% (Ideal > 99.6%) | Status: PASS
+   UACI: 31.1439% (Ideal ~ 33.46%)
+--------------------------------------------------
+8. CHOSEN-PLAINTEXT DIFFUSION-LEAKAGE PROBE:
+   NOTE: under this content-dependent design, the permutation key ks_p is unknown to an attacker who only chooses the plaintext, so the all-zero ciphertext (= ks_d permuted by an unknown ks_p) cannot be trivially un-permuted.
+   All-zero ciphertext entropy: 7.998989 (ideal 8.0; a value well below 8.0 would indicate diffusion-stream leakage)
+   Impulse-response ciphertext written to 'CPA_Probe_Impulse.png' for visual/structural inspection.
+--------------------------------------------------
+9. NIST SP 800-22 FULL SUITE (15 tests, diffusion key stream):
+   01. Frequency (Monobit): 0.2520955676267015 -> PASS
+   02. Block Frequency: 0.24419943089223492 -> PASS
+   03. Runs: 0.6518550148343798 -> PASS
+   04. Longest Run of Ones in a Block: 0.4054973868762625 -> PASS
+   05. Binary Matrix Rank: 0.43743824603094345 -> PASS
+   06. Discrete Fourier Transform (Spectral): 0.2615933217494877 -> PASS
+   07. Non-overlapping Template Matching: 0.7994294134674701 -> PASS
+   08. Overlapping Template Matching: 0.247656667240948 -> PASS
+   09. Maurer's Universal Statistical: 0.6619036667718676 -> PASS
+   10. Linear Complexity: 0.29574409985105327 -> PASS
+   11a. Serial (delta psi^2): 0.5535880139239211 -> PASS
+   11b. Serial (delta^2 psi^2): 0.47020131660560693 -> PASS
+   12. Approximate Entropy: 0.5544762611535048 -> PASS
+   13a. Cumulative Sums (forward): 0.46736985827854693 -> PASS
+   13b. Cumulative Sums (backward): 0.05816511586517901 -> PASS
+   14. Random Excursions: None -> N/A (insufficient data for this test length)
+   15. Random Excursions Variant: None -> N/A (insufficient data for this test length)
+==================================================
