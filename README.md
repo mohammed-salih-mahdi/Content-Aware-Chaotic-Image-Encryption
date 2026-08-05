@@ -10,7 +10,7 @@ The repository also includes a full research/benchmarking pipeline:
 performance timing, robustness under noise and cropping, key
 sensitivity, a chosen-plaintext diffusion-leakage probe, entropy and
 correlation analysis, and the complete 15-test NIST SP 800-22
-randomness battery.
+randomness  .
 
 ## Project structure
 
@@ -51,7 +51,7 @@ Implements `FullResearchEncryptionSystem`, which:
   robustness, key-sensitivity test, chosen-plaintext diffusion probe,
   NPCR/UACI, global and local entropy, full correlation tables
   (per-channel, per-direction, and inter-channel), polar histograms,
-  and the NIST SP 800-22 battery — then writes it all to a single
+  and the NIST SP 800-22   — then writes it all to a single
   text report.
 
 ### `main.py`
