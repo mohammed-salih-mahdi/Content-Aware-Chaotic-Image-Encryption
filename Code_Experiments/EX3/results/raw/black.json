@@ -1,0 +1,265 @@
+{
+  "image": "black",
+  "shape": [
+    256,
+    256,
+    3
+  ],
+  "sha256_plaintext": "3381de4ca9f3a477f25989dfc8b744e7916046b7aa369f61a9a2f7dc0963ec9e",
+  "nonce": "0d65194e8e576f809595cea7",
+  "parameters": {
+    "a": 9.346330883992318,
+    "b": 2.5835971411760936,
+    "c": 28.19283344248624,
+    "r": -1.2508708739329628
+  },
+  "initial_state": [
+    0.591801269585828,
+    0.5871295038443374,
+    0.7012769440903183,
+    0.13972204941818517
+  ],
+  "cuckoo_search": {
+    "population": 10,
+    "pa": 0.25,
+    "generations": 5,
+    "levy_beta": 1.5,
+    "seed": 7071085576446072050,
+    "fitness": 3.2830308231082403,
+    "evaluations": 77,
+    "time_sec": 15.248084642000322,
+    "history": [
+      {
+        "generation": 1,
+        "best_fitness": 2.5152862782423697
+      },
+      {
+        "generation": 2,
+        "best_fitness": 3.122943882863059
+      },
+      {
+        "generation": 3,
+        "best_fitness": 3.122943882863059
+      },
+      {
+        "generation": 4,
+        "best_fitness": 3.2830308231082403
+      },
+      {
+        "generation": 5,
+        "best_fitness": 3.2830308231082403
+      }
+    ]
+  },
+  "timing": {
+    "encryption_sec_mean": 0.21094079059989781,
+    "encryption_sec_sd": 0.02033614624312959,
+    "decryption_sec_mean": 0.2465875877000144,
+    "decryption_sec_sd": 0.03560962066515919,
+    "cs_sec": 15.248084642000322,
+    "runs": 10
+  },
+  "lossless_decryption": true,
+  "lyapunov": {
+    "lambda": [
+      0.4200406712012922,
+      0.0796305501881131,
+      -0.0451191619894771,
+      -14.635350949388384
+    ],
+    "sum": -14.180798889988456,
+    "divergence": -14.180798899101374,
+    "abs_error": 9.112918419873495e-09,
+    "kaplan_yorke": 3.0310585008157203,
+    "positive": 2,
+    "hyperchaos": "PASS"
+  },
+  "entropy_global": {
+    "Blue": 7.997569619718882,
+    "Green": 7.99757953118546,
+    "Red": 7.997217496438383,
+    "mean": 7.9974555491142425
+  },
+  "entropy_local": {
+    "block": "44x44",
+    "k": 25,
+    "Blue": 7.902395428864121,
+    "Blue_pass": true,
+    "Green": 7.9021161924231125,
+    "Green_pass": true,
+    "Red": 7.904827167234856,
+    "Red_pass": true,
+    "mean": 7.903112929507363,
+    "sd_over_channels": 0.0012174978404544212,
+    "all_pass": true
+  },
+  "entropy_local_32x32_pooled": {
+    "mean": 7.939242963771245,
+    "sd": 0.00590517390561081
+  },
+  "correlation_cipher": {
+    "Blue_H": -0.0011182074918248662,
+    "Blue_V": -0.0022800510696428084,
+    "Blue_D": -0.001599478728702815,
+    "Green_H": 0.003969133409258392,
+    "Green_V": -0.0021178945974579147,
+    "Green_D": 0.00723116903779917,
+    "Red_H": -0.006937458664941633,
+    "Red_V": -0.0007223420367430736,
+    "Red_D": 0.0029287639681731706,
+    "max_abs": 0.00723116903779917,
+    "mean_abs": 0.003211611000504872
+  },
+  "correlation_plain": {
+    "Blue_H": 1.0,
+    "Blue_V": 1.0,
+    "Blue_D": 1.0,
+    "Green_H": 1.0,
+    "Green_V": 1.0,
+    "Green_D": 1.0,
+    "Red_H": 1.0,
+    "Red_V": 1.0,
+    "Red_D": 1.0,
+    "max_abs": 1.0,
+    "mean_abs": 1.0
+  },
+  "polar_R_plain": {
+    "Blue": 1.0,
+    "Green": 1.0,
+    "Red": 1.0
+  },
+  "polar_R_cipher": {
+    "Blue": 0.004368661233435895,
+    "Green": 0.0032234330311557095,
+    "Red": 0.004649939580581703
+  },
+  "differential": {
+    "npcr_percent": 99.59818522135416,
+    "uaci_percent": 33.434422312219155,
+    "modified_params": [
+      9.836061240075885,
+      2.875063076564395,
+      27.42626980699451,
+      -1.52
+    ]
+  },
+  "key_sensitivity": {
+    "psnr_db": 5.974896171643964,
+    "ssim": 6.914073729692247e-06,
+    "npcr_percent": 79.29534912109375,
+    "uaci_percent": 37.996536952997346,
+    "perturbation": "x0 + 1e-12",
+    "one_ulp": {
+      "psnr_db": Infinity,
+      "ssim": 1.0,
+      "npcr_percent": 0.0,
+      "uaci_percent": 0.0
+    },
+    "one_bit_root_key": "REJECTED (AUTHENTICATION_FAILED)"
+  },
+  "chosen_plaintext_probe": {
+    "all_zero_cipher_entropy": 7.997096985959089,
+    "fresh_nonce_gives_different_cipher": true,
+    "npcr_between_two_sessions": 99.6246337890625
+  },
+  "robustness": [
+    {
+      "attack": "Noise",
+      "level_percent": 1,
+      "psnr_db": 24.723331425816077,
+      "ssim": 0.6856447021413645,
+      "authenticated_protocol": "REJECTED (AUTHENTICATION_FAILED)"
+    },
+    {
+      "attack": "Noise",
+      "level_percent": 5,
+      "psnr_db": 17.769645705425965,
+      "ssim": 0.14808244253600344,
+      "authenticated_protocol": "REJECTED (AUTHENTICATION_FAILED)"
+    },
+    {
+      "attack": "Noise",
+      "level_percent": 10,
+      "psnr_db": 14.758614729286714,
+      "ssim": 0.021249223617692114,
+      "authenticated_protocol": "REJECTED (AUTHENTICATION_FAILED)"
+    },
+    {
+      "attack": "Cropping",
+      "level_percent": 10,
+      "psnr_db": 14.757814471456985,
+      "ssim": 0.11482665297442553,
+      "authenticated_protocol": "REJECTED (AUTHENTICATION_FAILED)"
+    },
+    {
+      "attack": "Cropping",
+      "level_percent": 25,
+      "psnr_db": 10.79442631165368,
+      "ssim": 0.01118114468056724,
+      "authenticated_protocol": "REJECTED (AUTHENTICATION_FAILED)"
+    },
+    {
+      "attack": "Cropping",
+      "level_percent": 50,
+      "psnr_db": 7.784423273971921,
+      "ssim": 5.095708128908564e-05,
+      "authenticated_protocol": "REJECTED (AUTHENTICATION_FAILED)"
+    }
+  ],
+  "nist": {
+    "n_bits": 1572864,
+    "cycles_J": 1812,
+    "random_excursions_applicable": true,
+    "p_values": {
+      "01 Frequency": 0.879583,
+      "02 Block Frequency": 0.744609,
+      "03 Runs": 0.788752,
+      "04 Longest Run of Ones": 0.290528,
+      "05 Binary Matrix Rank": 0.040112,
+      "06 DFT (Spectral)": 0.550458,
+      "07 Non-overlapping Template (000000001)": 0.818698,
+      "08 Overlapping Template": 0.687506,
+      "09 Maurer Universal": 0.138279,
+      "10 Linear Complexity": 0.413835,
+      "11a Serial (p1)": 0.774309,
+      "11b Serial (p2)": 0.812188,
+      "12 Approximate Entropy": 0.806748,
+      "13a Cumulative Sums (forward)": 0.633706,
+      "13b Cumulative Sums (reverse)": 0.501927,
+      "14 Random Excursions (x=-4)": 0.748281,
+      "14 Random Excursions (x=-3)": 0.65919,
+      "14 Random Excursions (x=-2)": 0.138326,
+      "14 Random Excursions (x=-1)": 0.343054,
+      "14 Random Excursions (x=+1)": 0.345877,
+      "14 Random Excursions (x=+2)": 0.467792,
+      "14 Random Excursions (x=+3)": 0.25313,
+      "14 Random Excursions (x=+4)": 0.467386,
+      "15 Random Excursions Variant (x=-9)": 0.875146,
+      "15 Random Excursions Variant (x=-8)": 0.87391,
+      "15 Random Excursions Variant (x=-7)": 0.558473,
+      "15 Random Excursions Variant (x=-6)": 0.400106,
+      "15 Random Excursions Variant (x=-5)": 0.4481,
+      "15 Random Excursions Variant (x=-4)": 0.330469,
+      "15 Random Excursions Variant (x=-3)": 0.160304,
+      "15 Random Excursions Variant (x=-2)": 0.137136,
+      "15 Random Excursions Variant (x=-1)": 0.272925,
+      "15 Random Excursions Variant (x=+1)": 0.841999,
+      "15 Random Excursions Variant (x=+2)": 0.961754,
+      "15 Random Excursions Variant (x=+3)": 0.777717,
+      "15 Random Excursions Variant (x=+4)": 0.830961,
+      "15 Random Excursions Variant (x=+5)": 0.903044,
+      "15 Random Excursions Variant (x=+6)": 0.798387,
+      "15 Random Excursions Variant (x=+7)": 0.861023,
+      "15 Random Excursions Variant (x=+8)": 0.473825,
+      "15 Random Excursions Variant (x=+9)": 0.169492
+    },
+    "applicable": 41,
+    "passed": 41,
+    "not_applicable": 0,
+    "not_applicable_core": [],
+    "nonoverlapping_all_templates": {
+      "templates": 148,
+      "passed": 148
+    }
+  }
+}

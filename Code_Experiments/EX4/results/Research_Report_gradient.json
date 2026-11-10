@@ -1,0 +1,187 @@
+{
+  "image": "gradient",
+  "shape": [
+    256,
+    256,
+    3
+  ],
+  "secret_key_hex": "70777f6c8316f14bc70dab110718774aa7b105c560e41f561ba12365865c78af",
+  "parameters": {
+    "a": 36.053834413124896,
+    "b": 3.339823291257359,
+    "c": 31.09656088343757,
+    "d": 30.158440222158866,
+    "r": 0.9613454477567785
+  },
+  "cs_time_sec": 3.383776903152466,
+  "timing": {
+    "encryption_sec": 0.27960867881774903,
+    "decryption_sec": 0.2925708532333374
+  },
+  "lyapunov": [
+    4.069841691144776,
+    3.182301453989263,
+    -0.6116672009072593,
+    -38.88108815341538
+  ],
+  "dynamics": [
+    "Divergence (trace J) = -a - 1 - b + r = -39.4323 => system is DISSIPATIVE",
+    "Sorted Lyapunov spectrum: [4.0698, 3.1823, -0.6117, -38.8811]",
+    "Kaplan-Yorke dimension (D_KY): 3.1708",
+    "Positive exponents: 2 (hyperchaos requires >= 2)"
+  ],
+  "global_entropy": 7.997151972160165,
+  "local_entropy_mean": 7.939259669413974,
+  "local_entropy_std": 0.005547183240334299,
+  "correlation": {
+    "Blue": {
+      "Horizontal": 0.0022364636050553645,
+      "Vertical": 0.005454074950055613,
+      "Diagonal": 0.00232607760184316
+    },
+    "Green": {
+      "Horizontal": -0.005217915391602953,
+      "Vertical": -0.002248568993880352,
+      "Diagonal": 0.012249752983434996
+    },
+    "Red": {
+      "Horizontal": 0.002623451635984098,
+      "Vertical": -0.0008536654181503377,
+      "Diagonal": 0.005271033909498186
+    }
+  },
+  "inter_channel_correlation": {
+    "R-G": 0.0004903476687094809,
+    "R-B": 0.0010030272456726197,
+    "G-B": -0.00901423546686707
+  },
+  "polar_R_original": {
+    "Blue": 0.0003833412056829349,
+    "Green": 0.0003833412056829349,
+    "Red": 0.0003833412056829349
+  },
+  "polar_R_encrypted": {
+    "Blue": 0.0037457724112609607,
+    "Green": 0.0011195681213451187,
+    "Red": 0.002561501517384101
+  },
+  "npcr_percent": 99.59920247395834,
+  "uaci_percent": 33.479430753421155,
+  "robustness": [
+    [
+      "Noise",
+      "1%",
+      22.861520784752194,
+      0.4628899782987956,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Noise",
+      "5%",
+      16.302244560637323,
+      0.07602179743856204,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Noise",
+      "10%",
+      13.664900901439026,
+      0.033191301019473866,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Cropping",
+      "10%",
+      17.914419145109267,
+      0.19254191021286385,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Cropping",
+      "25%",
+      13.811574210951836,
+      0.0472884763061136,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Cropping",
+      "50%",
+      10.789928020748203,
+      0.01693244767375841,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ]
+  ],
+  "key_sensitivity": [
+    "Deviation Applied: np.nextafter (+1 ULP) on 100% of permutation key stream",
+    "Deviation Applied: randomized diffusion key on 100% of diffusion key stream",
+    "PSNR (Correct vs Wrong Decrypt): 7.75 dB (Ideal: < 10 dB)",
+    "SSIM (Correct vs Wrong Decrypt): 0.0087 (Ideal: ~ 0.0)",
+    "NPCR: 99.6241% (Ideal > 99.6%) | Status: PASS",
+    "UACI: 33.4438% (Ideal ~ 33.46%)",
+    "One-bit change of K: REJECTED (AUTHENTICATION_FAILED)"
+  ],
+  "chosen_plaintext_probe": [
+    "NOTE: ks_p is unknown to a chosen-plaintext attacker; the all-zero ciphertext cannot be trivially un-permuted.",
+    "All-zero ciphertext entropy: 7.999172 (ideal 8.0)"
+  ],
+  "key_space": [
+    "Chaotic initial-state search space: 2^191.31 (image-content-derived, not secret on its own).",
+    "Independent root secret key K: 2^256 (new in this build; see 'AUTHENTICATION LAYER' section)."
+  ],
+  "nist_official_sts": {
+    "n_bits": 1572864,
+    "cycles_J": 624,
+    "random_excursions_applicable": true,
+    "p_values": {
+      "01 Frequency": 0.538184,
+      "02 Block Frequency": 0.823078,
+      "03 Runs": 0.47121,
+      "04 Longest Run of Ones": 0.239097,
+      "05 Binary Matrix Rank": 0.769013,
+      "06 DFT (Spectral)": 0.276896,
+      "07 Non-overlapping Template (000000001)": 0.731865,
+      "08 Overlapping Template": 0.759891,
+      "09 Maurer Universal": 0.622141,
+      "10 Linear Complexity": 0.341832,
+      "11a Serial (p1)": 0.330817,
+      "11b Serial (p2)": 0.493756,
+      "12 Approximate Entropy": 0.134762,
+      "13a Cumulative Sums (forward)": 0.794109,
+      "13b Cumulative Sums (reverse)": 0.553397,
+      "14 Random Excursions (x=-4)": 0.583549,
+      "14 Random Excursions (x=-3)": 0.292139,
+      "14 Random Excursions (x=-2)": 0.260248,
+      "14 Random Excursions (x=-1)": 0.419411,
+      "14 Random Excursions (x=+1)": 0.889465,
+      "14 Random Excursions (x=+2)": 0.767159,
+      "14 Random Excursions (x=+3)": 0.790594,
+      "14 Random Excursions (x=+4)": 0.877455,
+      "15 Random Excursions Variant (x=-9)": 0.611424,
+      "15 Random Excursions Variant (x=-8)": 0.553841,
+      "15 Random Excursions Variant (x=-7)": 0.362449,
+      "15 Random Excursions Variant (x=-6)": 0.352216,
+      "15 Random Excursions Variant (x=-5)": 0.390537,
+      "15 Random Excursions Variant (x=-4)": 0.380313,
+      "15 Random Excursions Variant (x=-3)": 0.368756,
+      "15 Random Excursions Variant (x=-2)": 0.377494,
+      "15 Random Excursions Variant (x=-1)": 0.712881,
+      "15 Random Excursions Variant (x=+1)": 0.444696,
+      "15 Random Excursions Variant (x=+2)": 0.756168,
+      "15 Random Excursions Variant (x=+3)": 0.694736,
+      "15 Random Excursions Variant (x=+4)": 0.585307,
+      "15 Random Excursions Variant (x=+5)": 0.748353,
+      "15 Random Excursions Variant (x=+6)": 0.752162,
+      "15 Random Excursions Variant (x=+7)": 0.671602,
+      "15 Random Excursions Variant (x=+8)": 0.820756,
+      "15 Random Excursions Variant (x=+9)": 0.726236
+    },
+    "applicable": 41,
+    "passed": 41,
+    "not_applicable": 0,
+    "not_applicable_core": [],
+    "nonoverlapping_all_templates": {
+      "templates": 148,
+      "passed": 146
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "image": "Two Macaws",
+  "filename": "Two Macaws.png",
+  "shape": [
+    512,
+    768,
+    3
+  ],
+  "channels": 3,
+  "pixels_or_samples": 1179648,
+  "sha256": "351bcf06eb25df1255791a830d541ab91db0effaeec39b254b53b3edb0551d3d",
+  "nonce": "8ac02e4c3ad1c9e7a4b30f37",
+  "parameters": {
+    "a": 10.39548399349599,
+    "b": 2.632552030483585,
+    "c": 28.218112721909772,
+    "r": -1.114480523708497
+  },
+  "initials": [
+    0.40657255713931384,
+    0.8127560276002814,
+    0.825151945540917,
+    0.8890327067857637
+  ],
+  "cs": {
+    "population": 10,
+    "pa": 0.25,
+    "generations": 5,
+    "levy_beta": 1.5,
+    "seed": 5208568720950289474,
+    "fitness": 3.7086827795172703,
+    "time_sec": 43.720363099942915
+  },
+  "timing": {
+    "encryption_sec": 123.32729539996944,
+    "decryption_sec": 76.87460590002593
+  },
+  "correct_decryption": true,
+  "entropy": {
+    "channel_1": 7.999492136215937,
+    "channel_2": 7.99942766626404,
+    "channel_3": 7.999573950432343,
+    "mean": 7.999497917637441
+  },
+  "local_entropy_mean": 6.940883833617504,
+  "local_entropy_sd": 0.05695933277404888,
+  "correlation": {
+    "C1_H": -0.0014834026915678219,
+    "C1_V": 0.0005910474398063164,
+    "C1_D": 0.0030659901253572994,
+    "C2_H": 0.001035081998555576,
+    "C2_V": -0.0019500394083405337,
+    "C2_D": -0.0015853148053875453,
+    "C3_H": -0.002036534449049849,
+    "C3_V": 0.0017398548255466528,
+    "C3_D": -0.0005294213049905584,
+    "max_abs": 0.0030659901253572994,
+    "mean_abs": 0.0017082677173959452
+  },
+  "npcr_percent": 99.61471557617188,
+  "uaci_percent": 33.48924358426096,
+  "lyapunov": {
+    "lambda1": 0.2911900671571669,
+    "lambda2": 0.1301694179873156,
+    "lambda3": 0.008765281620903129,
+    "lambda4": -15.572641302235967,
+    "sum": -15.14251653547058,
+    "divergence": -15.142516547688071,
+    "absolute_error": 1.2217491018873261e-08,
+    "kaplan_yorke": 3.0276205403063914,
+    "positive_count": 3,
+    "hyperchaos_status": "PASS"
+  },
+  "key_authentication": {
+    "root_key_bits": 256,
+    "one_bit_modified_key": "REJECTED"
+  },
+  "initial_state_perturbation": {
+    "epsilon": 1e-12,
+    "psnr_db": 8.494680597867031,
+    "ssim": 0.009362033397438185,
+    "npcr_percent": 99.59632025824654,
+    "uaci_percent": 30.680711866723687
+  },
+  "chosen_plaintext": {
+    "same_plaintext_fresh_nonce_produces_different_ciphertext": true
+  },
+  "nist": {
+    "status": "NOT_RUN",
+    "note": "Use a validated SP 800-22 implementation before reporting NIST pass counts."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "image": "Lung",
+  "filename": "Lung.png",
+  "shape": [
+    256,
+    256
+  ],
+  "channels": 1,
+  "pixels_or_samples": 65536,
+  "sha256": "628db2a7059188be609a8c3bee3f6f00317b417ed58b405063b9c722bf4461a4",
+  "nonce": "15c67442e822e62d2b5fa495",
+  "parameters": {
+    "a": 9.17629869040277,
+    "b": 2.889269224458116,
+    "c": 28.221639114503297,
+    "r": -0.3857664214258979
+  },
+  "initials": [
+    0.8870168496924599,
+    0.8762785155691509,
+    0.4710865256795964,
+    0.28690028809942214
+  ],
+  "cs": {
+    "population": 10,
+    "pa": 0.25,
+    "generations": 5,
+    "levy_beta": 1.5,
+    "seed": 3536501738039660187,
+    "fitness": 2.7998849762863234,
+    "time_sec": 48.05947089998517
+  },
+  "timing": {
+    "encryption_sec": 52.76858799997717,
+    "decryption_sec": 4.773386000073515
+  },
+  "correct_decryption": true,
+  "entropy": {
+    "channel_1": 7.997098464059789,
+    "mean": 7.997098464059789
+  },
+  "local_entropy_mean": 7.173343123083557,
+  "local_entropy_sd": 0.04936345151234838,
+  "correlation": {
+    "C1_H": -0.0015325686180686488,
+    "C1_V": -0.0029854035383296935,
+    "C1_D": -0.00555289662227618,
+    "max_abs": 0.00555289662227618,
+    "mean_abs": 0.0039059413502376757
+  },
+  "npcr_percent": 99.560546875,
+  "uaci_percent": 33.4188782935049,
+  "lyapunov": {
+    "lambda1": 0.6895907621247747,
+    "lambda2": 0.061856466669109156,
+    "lambda3": -0.024340515290225143,
+    "lambda4": -14.178441040414624,
+    "sum": -13.451334326910965,
+    "divergence": -13.451334336286784,
+    "absolute_error": 9.375819232104732e-09,
+    "kaplan_yorke": 3.05128255718884,
+    "positive_count": 2,
+    "hyperchaos_status": "PASS"
+  },
+  "key_authentication": {
+    "root_key_bits": 256,
+    "one_bit_modified_key": "REJECTED"
+  },
+  "initial_state_perturbation": {
+    "epsilon": 1e-12,
+    "psnr_db": 8.980401591189995,
+    "ssim": 0.012451029868437798,
+    "npcr_percent": 98.980712890625,
+    "uaci_percent": 28.313185747931986
+  },
+  "chosen_plaintext": {
+    "same_plaintext_fresh_nonce_produces_different_ciphertext": true
+  },
+  "nist": {
+    "status": "NOT_RUN",
+    "note": "Use a validated SP 800-22 implementation before reporting NIST pass counts."
+  }
+}

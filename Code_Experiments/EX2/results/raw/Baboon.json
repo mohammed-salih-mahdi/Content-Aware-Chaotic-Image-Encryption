@@ -1,0 +1,92 @@
+{
+  "image": "Baboon",
+  "filename": "Baboon.png",
+  "shape": [
+    256,
+    256,
+    3
+  ],
+  "channels": 3,
+  "pixels_or_samples": 188928,
+  "sha256": "9e6e77f60ac15eb104377beefeebbb31c0d65e5793f52c1de63928ed10b1ace6",
+  "nonce": "382076130de2ee1e83a85280",
+  "parameters": {
+    "a": 10.730369562204269,
+    "b": 2.6920611372047563,
+    "c": 28.242472820885983,
+    "r": -1.158187844874936
+  },
+  "initials": [
+    0.3559444386629286,
+    0.29708279153439354,
+    0.8553901085329131,
+    0.7003142219231892
+  ],
+  "cs": {
+    "population": 10,
+    "pa": 0.25,
+    "generations": 5,
+    "levy_beta": 1.5,
+    "seed": 7410142716979862513,
+    "fitness": 4.40533972306383,
+    "time_sec": 62.15522539999802
+  },
+  "timing": {
+    "encryption_sec": 84.23099999991246,
+    "decryption_sec": 25.824211500003003
+  },
+  "correct_decryption": true,
+  "entropy": {
+    "channel_1": 7.997531461870787,
+    "channel_2": 7.997126025707104,
+    "channel_3": 7.9970040097695145,
+    "mean": 7.997220499115802
+  },
+  "local_entropy_mean": 6.944067751698117,
+  "local_entropy_sd": 0.057452659985993484,
+  "correlation": {
+    "C1_H": -0.0011053019713223335,
+    "C1_V": -0.010086466570658427,
+    "C1_D": -0.002613125407622593,
+    "C2_H": -0.00891558202250287,
+    "C2_V": -0.0009465249054926322,
+    "C2_D": -0.006544492627791231,
+    "C3_H": -0.00030243018327073704,
+    "C3_V": 0.0037827647460808916,
+    "C3_D": -0.004370155202437649,
+    "max_abs": 0.010086466570658427,
+    "mean_abs": 0.004875331020783779
+  },
+  "npcr_percent": 99.59561314363144,
+  "uaci_percent": 33.4151447672565,
+  "lyapunov": {
+    "lambda1": 0.27764305541210016,
+    "lambda2": 0.18647440936308982,
+    "lambda3": -0.013272669287318057,
+    "lambda4": -16.03146332540771,
+    "sum": -15.580618529919839,
+    "divergence": -15.580618544283961,
+    "absolute_error": 1.4364122336019136e-08,
+    "kaplan_yorke": 3.028122498011354,
+    "positive_count": 2,
+    "hyperchaos_status": "PASS"
+  },
+  "key_authentication": {
+    "root_key_bits": 256,
+    "one_bit_modified_key": "REJECTED"
+  },
+  "initial_state_perturbation": {
+    "epsilon": 1e-12,
+    "psnr_db": 8.710921328092478,
+    "ssim": 0.009311513430265107,
+    "npcr_percent": 99.5532689701897,
+    "uaci_percent": 29.774560866013072
+  },
+  "chosen_plaintext": {
+    "same_plaintext_fresh_nonce_produces_different_ciphertext": true
+  },
+  "nist": {
+    "status": "NOT_RUN",
+    "note": "Use a validated SP 800-22 implementation before reporting NIST pass counts."
+  }
+}

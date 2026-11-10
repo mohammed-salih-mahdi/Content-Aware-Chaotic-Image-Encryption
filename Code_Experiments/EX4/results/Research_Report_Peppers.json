@@ -1,0 +1,161 @@
+{
+  "image": "Peppers",
+  "shape": [
+    256,
+    256,
+    3
+  ],
+  "secret_key_hex": "70777f6c8316f14bc70dab110718774aa7b105c560e41f561ba12365865c78af",
+  "parameters": {
+    "a": 36.45849802097118,
+    "b": 4.634049353667134,
+    "c": 32.64915237373805,
+    "d": 25.673987653877486,
+    "r": 1.3367439081865982
+  },
+  "cs_time_sec": 3.5419487953186035,
+  "timing": {
+    "encryption_sec": 0.30420067310333254,
+    "decryption_sec": 0.2955307960510254
+  },
+  "lyapunov": [
+    5.5115093829721635,
+    3.8543223372034596,
+    -0.10551156779799445,
+    -40.87545567437306
+  ],
+  "dynamics": [
+    "Divergence (trace J) = -a - 1 - b + r = -40.7558 => system is DISSIPATIVE",
+    "Sorted Lyapunov spectrum: [5.5115, 3.8543, -0.1055, -40.8755]",
+    "Kaplan-Yorke dimension (D_KY): 3.2265",
+    "Positive exponents: 2 (hyperchaos requires >= 2)"
+  ],
+  "global_entropy": 7.997362623477163,
+  "local_entropy_mean": 7.940320340137127,
+  "local_entropy_std": 0.005486503488397755,
+  "correlation": {
+    "Blue": {
+      "Horizontal": -0.002073571890708831,
+      "Vertical": 0.005634898392321891,
+      "Diagonal": 0.0030488269861077277
+    },
+    "Green": {
+      "Horizontal": 0.004631602009612491,
+      "Vertical": -0.0007838705736064054,
+      "Diagonal": 0.000671048695673078
+    },
+    "Red": {
+      "Horizontal": -0.0036500152755427765,
+      "Vertical": -0.0023503185323472484,
+      "Diagonal": 0.001366808184309107
+    }
+  },
+  "inter_channel_correlation": {
+    "R-G": 0.004640753505573736,
+    "R-B": 0.005764655597644189,
+    "G-B": -0.0041713614662368705
+  },
+  "polar_R_original": {
+    "Blue": 0.6174497477182883,
+    "Green": 0.12952403182655378,
+    "Red": 0.5405810186993762
+  },
+  "polar_R_encrypted": {
+    "Blue": 0.002508486563234488,
+    "Green": 0.001852387008486878,
+    "Red": 0.009644933157742746
+  },
+  "npcr_percent": 99.60734049479166,
+  "uaci_percent": 33.49244959214154,
+  "robustness": [
+    [
+      "Noise",
+      "1%",
+      23.337893152256434,
+      0.666999869651575,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Noise",
+      "5%",
+      16.66358489725584,
+      0.2953953811571206,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Noise",
+      "10%",
+      13.977995656460099,
+      0.18902578559633051,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Cropping",
+      "10%",
+      18.19450419618905,
+      0.5594654362541,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Cropping",
+      "25%",
+      14.12337823876319,
+      0.34347425098037604,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ],
+    [
+      "Cropping",
+      "50%",
+      11.10297683137504,
+      0.19322483040367933,
+      "REJECTED (AUTHENTICATION_FAILED)"
+    ]
+  ],
+  "key_sensitivity": [
+    "Deviation Applied: np.nextafter (+1 ULP) on 100% of permutation key stream",
+    "Deviation Applied: randomized diffusion key on 100% of diffusion key stream",
+    "PSNR (Correct vs Wrong Decrypt): 8.10 dB (Ideal: < 10 dB)",
+    "SSIM (Correct vs Wrong Decrypt): 0.0078 (Ideal: ~ 0.0)",
+    "NPCR: 99.5972% (Ideal > 99.6%) | Status: FAIL",
+    "UACI: 32.1873% (Ideal ~ 33.46%)",
+    "One-bit change of K: REJECTED (AUTHENTICATION_FAILED)"
+  ],
+  "chosen_plaintext_probe": [
+    "NOTE: ks_p is unknown to a chosen-plaintext attacker; the all-zero ciphertext cannot be trivially un-permuted.",
+    "All-zero ciphertext entropy: 7.998872 (ideal 8.0)"
+  ],
+  "key_space": [
+    "Chaotic initial-state search space: 2^191.31 (image-content-derived, not secret on its own).",
+    "Independent root secret key K: 2^256 (new in this build; see 'AUTHENTICATION LAYER' section)."
+  ],
+  "nist_official_sts": {
+    "n_bits": 1572864,
+    "cycles_J": 53,
+    "random_excursions_applicable": false,
+    "p_values": {
+      "01 Frequency": 0.564822,
+      "02 Block Frequency": 0.639868,
+      "03 Runs": 0.085257,
+      "04 Longest Run of Ones": 0.940976,
+      "05 Binary Matrix Rank": 0.558382,
+      "06 DFT (Spectral)": 0.818281,
+      "07 Non-overlapping Template (000000001)": 0.481351,
+      "08 Overlapping Template": 0.505091,
+      "09 Maurer Universal": 0.77971,
+      "10 Linear Complexity": 0.372027,
+      "11a Serial (p1)": 0.420577,
+      "11b Serial (p2)": 0.446695,
+      "12 Approximate Entropy": 0.253748,
+      "13a Cumulative Sums (forward)": 0.285956,
+      "13b Cumulative Sums (reverse)": 0.732665
+    },
+    "applicable": 15,
+    "passed": 15,
+    "not_applicable": 2,
+    "not_applicable_core": [],
+    "nonoverlapping_all_templates": {
+      "templates": 148,
+      "passed": 147
+    }
+  }
+}
