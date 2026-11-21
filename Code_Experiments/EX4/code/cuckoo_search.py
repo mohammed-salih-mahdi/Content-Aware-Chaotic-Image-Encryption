@@ -11,9 +11,9 @@ class CuckooSearch:
         self.pa = pa                    # fraction of nests abandoned each generation
         self.max_iter = max_iter
         self.levy_beta = levy_beta
-        # Search bounds for (a, b, c, d, r)
-        self.lb = np.array([30, 2, 20, 10, 0.1])
-        self.ub = np.array([40, 5, 35, 35, 1.5])
+        # Search bounds for (a, b, c, r)
+        self.lb = np.array([9.0, 2.5, 27.0, -1.52], dtype=float)
+        self.ub = np.array([11.0, 3.0, 29.0, -0.06], dtype=float)
         self.rng = np.random.default_rng(seed)
 
     
@@ -22,33 +22,33 @@ class CuckooSearch:
         dx = a * (y - x) + w
         dy = c * x - y - x * z
         dz = x * y - b * z
-        dw = -d * y + r * w
-        return dx, dy, dz, dw
+        dr = -y * z + r * w
+        return dx, dy, dz, dr
 
     @staticmethod
-    def _jacobian(x, y, z, w, a, b, c, d, r):
+    def _jacobian(x, y, z, w, a, b, c, r):
         return np.array([
             [-a,     a,  0.0, 1.0],
             [c - z, -1.0, -x, 0.0],
             [y,      x,  -b, 0.0],
-            [0.0,   -d, 0.0,   r],
+            [0.0, -z, -y, r],
         ])
 
     def get_lyapunov_spectrum(self, params, quick_steps=2000, dt_lyap=0.002):
         """Fast (low-precision) Lyapunov spectrum estimate used only
         inside the search loop, where speed matters more than the
         high-precision estimate computed later for the final report."""
-        a, b, c, d, r = params
+        a, b, c, r = params
         x, y, z, w = -0.1, 0.5, -0.6, 0.2
         W = np.eye(4, dtype=np.float64)
-        LEs = np.zeros(4, dtype=np.float64)
+        LEs = np.zeros(4, dtype=np.float64)a
 
         for _ in range(quick_steps):
-            dx, dy, dz, dw = self._derivatives(x, y, z, w, a, b, c, d, r)
+            dx, dy, dz, dw = self._derivatives(x, y, z, w, a, b, c, r)
             x += dx * dt_lyap; y += dy * dt_lyap; z += dz * dt_lyap; w += dw * dt_lyap
             if np.isnan(x) or np.abs(x) > 100:
                 return np.full(4, -np.inf)
-            J = self._jacobian(x, y, z, w, a, b, c, d, r)
+            J = self._jacobian(x, y, z, w, a, b, c, r)
             try:
                 W = W + np.dot(J, W) * dt_lyap
                 Q, Rm = np.linalg.qr(W)
