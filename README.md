@@ -10,7 +10,8 @@ The repository also includes a full research/benchmarking pipeline:
 performance timing, robustness under noise and cropping, key
 sensitivity, a chosen-plaintext diffusion-leakage probe, entropy and
 correlation analysis, and the complete 15-test NIST SP 800-22
-randomness  .
+randomness .
+
 This repository contains every version of the code used across the review and revision process for the associated manuscript (PONE-D-26-20680), from the original Round 1 implementation through the current revision. Each version is self-contained — its own code and its own genuine, reproducible run output — so the evolution of the implementation is fully transparent rather than collapsed into a single unlabeled script.
 
 ## Installation
